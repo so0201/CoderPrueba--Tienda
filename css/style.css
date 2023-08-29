@@ -1,0 +1,98 @@
+/* Position y flex */
+
+.item {
+    background-color: burlywood;
+    border: 1px solid black;
+}
+
+.item p {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.gridPadre {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* ESPECIFICAMOS LA CANTIDAD DE COLUMNAS QUE QUEREMOS */
+    /* PODEMOS UTILIZAR CUALQUIER UNIDAD DE MEDIDA */
+    /* fr = fraccion nueva unidad de medida para grid */
+    grid-template-rows: repeat(4, 400px);
+
+    gap: 150px 50px ;
+
+    column-gap: 50px;
+
+    row-gap: 30px;
+    /*PROPIEDADES PARA ACOMODAR A LOS ELEMENTOS HIJOS*/
+    /*justify-items*/
+    /*Distribuye los elementos en el eje horizontal*/
+
+    justify-items: center;
+    /*Valores más utilizados: start, end, center*/
+
+    
+    /*aling-items*/
+    /*Distribuye los elementos en el eje vertical*/
+    align-items: center;
+}
+
+.rebelde {
+    /* para acomodarlo en eje horizontal */
+    justify-self: start;
+
+    /* para acomodarlo en el eje vertical */
+    align-self: flex-end;
+
+    background-color: brown;
+}
+
+/**************************** GRID AREAS***************************/
+
+.contenedor {
+    display: grid;
+    grid-template-areas: 
+    "nav header header"
+    "nav header header"
+    "nav sectionA sectionB"
+    "footer footer footer"
+    "publi publi publi"
+    ;
+}
+
+header {
+    background-color: coral;
+    grid-area: header;
+}
+
+nav {
+    background-color: blanchedalmond;
+    grid-area: nav;
+}
+
+.sectionA {
+    background-color: burlywood;
+    grid-area: sectionA;
+
+    /* UTILIZO FLEX */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sectionB {
+    background-color: darkgreen;
+    grid-area: sectionB;
+}
+
+aside {
+    background-color: blueviolet;
+    grid-area: publi;
+}
+
+footer {
+    background-color: rgb(10, 163, 190);
+    grid-area: footer;
+}
+
